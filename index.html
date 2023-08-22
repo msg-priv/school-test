@@ -10,11 +10,29 @@
     </body>
     <script>
         function checkKey() {
+		
+            console.log("hey");
             var key = document.getElementById('key-input').value;
-        	
+            console.log(key);
+                
             var outputTxt = document.getElementById('output-text');
-        	outputTxt.textContent = "Checking key: " + key;
-        }
+            outputTxt.textContent = "Checking key: " + key;
 
+            const params = {
+                "t" : "4d1c6bd8-3260-8f6c-469e-5dadec967eed"
+            };
+            
+            const options = {
+                    method: 'GET',
+                    body: JSON.stringify(params)  
+            };
+
+            // doesn't work lmao i'll figure this out later
+            fetch('https://musowls.myschoolapp.com/api/DataDirect/AssignmentCenterAssignments/?format=json&filter=2&dateStart=8%2F20%2F2023&dateEnd=8%2F27%2F2023&persona=2&statusList=&sectionList=', options)
+                    .then(response => response.json())
+                    .then(response => {
+                        console.log(response);
+                });
+            }
     </script>
 </main>
