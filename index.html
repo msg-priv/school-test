@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<main>
+    <body>
+        <h1>test</h1>
+        
+        <button onclick="checkKey();">Enter Key</button>
+        <input id="key-input"></input>
+
+        <h6 id="output-text">results show here</h6>
+    </body>
+    <script>
+        function checkKey() {
+            var key = document.getElementById('key-input').value;
+        	
+            var outputTxt = document.getElementById('output-text');
+        	outputTxt.textContent = "Checking key: " + key;
+        }
+
+    </script>
+</main>
